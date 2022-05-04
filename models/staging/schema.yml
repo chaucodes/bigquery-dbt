@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+    - name: staging
+      database: gas-prices-347218
+      schema: prices
+
+      tables:
+        - name: prices
+
+models:
+    - name: gas_prices
+      description: >
+        This is the gas prices data for cities in California.
+      columns:
+       - name: id
+         description: Primary key for this table.
+         tests:
+             - unique:
+                severity: warn
+             - not_null:
+                severity: warn
+
+
+
